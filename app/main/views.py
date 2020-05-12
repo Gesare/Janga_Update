@@ -1,12 +1,24 @@
-from flask import render_template
+
+from flask import render_template,request,redirect,url_for
 from . import main
+from ..request import get_article
+from ..models import Article
 
-
-# your views go here i.e for home,about
-@main.route("/")
+#views
+@main.route('/')
 def index():
-    return "<h1>Hello World</h1>"
+  '''
+  view root that returns the index page and various news sources 
+  '''
+  return render_template('index.html')
 
+@main.route('/international')
+def articles():
+  '''
+  view articles that returns various disaster articles from vaious sites
+  '''
+  articles=get_article()
+  return render_template('News/articles.html',articles=articles)
 
 @main.route("/about")
 def about():
