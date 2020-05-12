@@ -3,8 +3,8 @@ class Config:
   '''
   General configuration parent class
   '''
-  SOURCE_BASE_URL='https://newsapi.org/v2/everything?q=natural-disaster&apiKey={}'
-  NEWS_API_KEY=os.environ.get('NEWS_API_KEY')
+  BASE_URL='https://newsapi.org/v2/everything?q=natural-disaster&apiKey={}'
+  API_KEY=os.environ.get('API_KEY')
   
 class ProdConfig(Config):
   '''
