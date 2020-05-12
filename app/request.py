@@ -8,6 +8,7 @@ def configure_request(app):
   '''
   function to make url and apikey available globally
   '''
+  global apikey,base_url
   apikey=app.config['API_KEY']
   base_url=app.config['BASE_URL']
 
@@ -46,7 +47,7 @@ def process_results(article_list):
     urlToImage= article_item.get('urlToImage')
     publishedAt= article_item.get('publishedAt')
     
-    if title:
+    if urlToImage:
       article_object = Article(author,title,description,url,urlToImage,publishedAt)
       article_results.append(article_object)
   return article_results

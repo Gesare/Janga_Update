@@ -1,0 +1,25 @@
+{% extends 'base.html'%}
+
+{% block content %}
+<div class="container">
+  <h1>International Disasters</h1>
+  <div class="row">
+    {% for article in articles%}
+    <div class="col-md-6">
+      <div class="card">
+        <div class="card-title">
+          <h4>{{article.title}}</h4>
+        </div>
+        <div class="card-body">
+          <img class="img-thumbnail img-responsive" src="{{article.urlToImage}}" alt="news photo">
+          <p>{{article.description | truncate(100)}} <a href="{{article.url}}"> read more...</a></p>
+          <footer class="blockquote-footer"><cite title="Source Title"> by {{article.author}} , posted on {{article.publishedAt | truncate(13)}}</cite></footer>
+        </div>
+      </div>
+    </div>  
+    <br>
+    <br> 
+    {% endfor %}
+  </div>
+</div>
+{% endblock %}

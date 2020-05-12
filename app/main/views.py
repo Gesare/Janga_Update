@@ -17,4 +17,4 @@ def articles():
   view articles that returns various disaster articles from vaious sites
   '''
   articles=get_article()
-  return render_template('articles.html',articles=articles)
+  return render_template('News/articles.html',articles=articles)
