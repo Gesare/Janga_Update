@@ -1,0 +1,20 @@
+from flask import render_template,request,redirect,url_for
+from . import main
+from ..request import get_article
+from ..models import Article
+
+#views
+@main.route('/')
+def index():
+  '''
+  view root that returns the index page and various news sources 
+  '''
+  return render_template('index.html')
+
+@main.route('/international')
+def articles():
+  '''
+  view articles that returns various disaster articles from vaious sites
+  '''
+  articles=get_article()
+  return render_template('articles.html',articles=articles)
