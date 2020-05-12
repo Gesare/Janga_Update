@@ -1,3 +1,4 @@
+
 from flask import render_template,request,redirect,url_for
 from . import main
 from ..request import get_article
@@ -18,3 +19,7 @@ def articles():
   '''
   articles=get_article()
   return render_template('News/articles.html',articles=articles)
+
+@main.route("/about")
+def about():
+    pass
