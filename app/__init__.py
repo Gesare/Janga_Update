@@ -7,20 +7,23 @@ bootstrap=Bootstrap()
 db = SQLAlchemy()
 
 def create_app(config_name):
-  """
-    creates an instances of the application 
-    and passes the config name, i.e development
-    or production, the will then pick the environments
-    from the configuration classes in config
-    """
+  '''
+  creates an instances of the application 
+  and passes the config name, i.e development
+  or production, the will then pick the environments
+  from the configuration classes in config
+  '''
   
   app = Flask(__name__)
   app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+
   #creating app configurations
   app.config.from_object(config_options[config_name])
+
   #initializing flask extensions
   bootstrap.init_app(app)
   db.init_app(app)
+
   #blueprint register
   from app.main import main
   from app.auth import auth

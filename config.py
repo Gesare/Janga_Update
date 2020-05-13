@@ -8,7 +8,7 @@ class Config:
   API_KEY=os.environ.get('API_KEY')
   SECRET_KEY = os.environ.get("SECRET_KEY")
   CSRF_ENABLED = os.environ.get('CSRF_ENABLED')
-  SQLALCHEMY_DATABASE_URI = os.environ['DATABASE_URL']
+  
 
 class ProdConfig(Config):
   '''
@@ -16,7 +16,7 @@ class ProdConfig(Config):
   Args:
   Config: The parent configuration class with General configuration settings
   '''
-  DEBUG = os.environ.get("DEBUG")
+  pass
   
 class DevConfig(Config):
   '''
@@ -24,8 +24,9 @@ class DevConfig(Config):
   Args:
   Config: The parent configuration class with General configuration settings
   '''
-
-  DEBUG = os.environ.get("DEBUG")
+  DEBUG = True
+  
+  
 
 class TestingConfig(Config):
     TESTING = True
