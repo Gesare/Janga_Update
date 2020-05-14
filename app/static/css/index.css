@@ -1,0 +1,180 @@
+
+
+/*------- HEADER ------------*/
+header {
+    position: relative;
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(../images/c4.jpg);
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    height: 100vh;
+    text-align: center;
+    color: #fff;
+    width: 100%;
+    text-align: center;
+  }
+  
+  .text-box {
+      position: absolute;
+      width: 90%;
+      top: 50%;
+      left: 50%;
+      -webkit-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%)
+  }
+  
+  h1 {
+    font-family: 'Philosopher', sans-serif;
+    font-size: 250%;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    word-spacing: 2px;
+    color: #fff;
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 10px;
+  }
+  
+  .text-box p {
+    text-align: center;
+    font-style: italic;
+    margin-bottom: 30px;
+  }
+  
+  /*-----BUTTON ------*/
+  .btn:link,
+  .btn:visited,
+  input[type=submit] {
+    display: inline-block;
+    padding: 10px 30px;
+    font-weight: 300;
+    border-radius: 150px;
+     -webkit-transition: background-color 0.2s, border 0.2s, color 0.2s;
+    transition: background-color 0.2s, border 0.2s, color 0.2s;
+    background: #F7CA18;
+    border: 2px solid #F7CA18;
+    color: #fff;
+    font-size: 90%;
+    margin-right: 20px;
+  }
+  
+  .btn:hover,
+  .btn:active,
+  input[type=submit]:hover,
+  input[type=submit]:active {
+    background-color: #eb685a;
+    color: #fff;
+    transition: 0.3s;
+  }
+
+
+/*--------- CONTACT ------------*/
+.contact-form {
+    width: 80%;
+    margin: 0 auto;
+  }
+  
+  label {
+    margin-top: 15px;
+    font-weight: inherit;
+  }
+  
+  input[type=text],
+  input[type=email],
+  textarea {
+    width: 100%;
+    padding: 7px;
+    border-radius: 3px;
+    border: 1px solid #F7CA18;
+    margin-top: 10px;
+  }
+  
+  textarea {
+      height: 100px;
+  }
+  
+  .sub {
+    width: 100%;
+    text-align: center;
+    margin: 20px auto;
+  }
+  
+  ::-webkit-input-placeholder {
+    color: #F7CA18;
+    font-size: 90%;
+    font-style: italic;
+  }
+ 
+
+body{
+  font-family:inherit;
+  margin: 0;
+
+}
+
+.d1{
+  background-image:url(../images/backgrounds/h_img.jpg);
+  background-attachment: fixed;
+  text-align: center;
+  background-size: 1400px;
+  color:white;
+  padding-top: 210px;
+  padding-bottom: 100px
+ 
+}
+.AB{
+  text-align: center;
+}
+.ct{
+  text-align: center;
+  color: white;
+  padding-top: 100px;
+  padding-bottom: 100px;
+  background-size:1300px;
+  background-position: center;
+ 
+}
+.container{
+  text-align: center;
+}
+
+.col-md-3{
+  padding-bottom: 20px;
+}
+#social{
+  text-align: center;
+}
+#design{
+  display: none;
+}
+#dev{
+  display: none;
+}
+#pm{
+  display: none;
+}
+input[type=text]{
+  background-color: transparent;
+}
+.name{
+  color: white;
+  width: 300px;
+}
+.name{
+  color: white;
+  width: 300px;
+}
+.message{
+  padding-bottom: 120px;
+  height:150px;
+  width:500px;
+}
+
+
+p{
+  font-size:large;
+}
