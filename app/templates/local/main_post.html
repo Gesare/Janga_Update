@@ -3,28 +3,46 @@
 
 {% block content %}
 
-{% for post in posts %}
-<article class="media content-section">
-  <img class="rounded-circle article-img" src="{{ url_for('static', filename='profile_pics/' + post.author.image_file) }}">
-  <div class="media-body">
-    <div class="article-metadata">
-      <a class="mr-2" href="{{ url_for('auth.user_posts', username=post.author.username) }}">
-        {{ post.author.username }}
-      </a>
-      <small class="text-muted">
-        {{ post.date_posted.strftime('%Y-%m-%d') }}
-      </small>
+<main role="main" class="container">
+  <div class="row">
+    <div class="col-md-8 col-sm-8 col-lg-8 ">
+      {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+          {% for category, message in messages %}
+            <div class="alert alert-{{ category }}">
+              {{ message }}
+            </div>
+          {% endfor %}
+        {% endif %}
+      {% endwith %}
+      {% for post in posts %}
+      <article class="media content-section">
+        <img class="rounded-circle article-img w-2" src="{{ url_for('static', filename='images/' + post.author.image_file) }}">
+        <div class="media-body">
+          <div class="article-metadata">
+            <a class="mr-2" href="{{ url_for('auth.user_posts', username=post.author.username) }}">
+              {{ post.author.username }}
+            </a>
+            <small class="text-muted">
+              {{ post.date_posted.strftime('%Y-%m-%d') }}
+            </small>
+          </div>
+          <h2>
+            <a class="article-title" href="{{ url_for('main.post', post_id=post.id) }}">
+              {{ post.title }}
+            </a>
+          </h2>
+          <p class="article-content">
+            {{ post.content }}
+          </p>
+        </div>
+      </article>
+      {% endfor %}
+      
     </div>
-    <h2>
-      <a class="article-title" href="{{ url_for('main.post', post_id=post.id) }}">
-        {{ post.title }}
-      </a>
-    </h2>
-    <p class="article-content">
-      {{ post.content }}
-    </p>
   </div>
-</article>
-{% endfor %}
+</main>
+
+
 
 {% endblock %}
