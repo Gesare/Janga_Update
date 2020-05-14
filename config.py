@@ -5,6 +5,7 @@ class Config:
   General configuration parent class
   '''
   BASE_URL='https://newsapi.org/v2/everything?q=floods&earthquakes&landslides&volcano-eruption&apiKey={}'
+  CORONA_URL='https://api.covid19api.com/summary'
   API_KEY=os.environ.get('API_KEY')
   SECRET_KEY = os.environ.get("SECRET_KEY")
   CSRF_ENABLED = os.environ.get('CSRF_ENABLED')
