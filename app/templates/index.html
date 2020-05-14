@@ -1,4 +1,101 @@
 {% extends 'base.html'%}
-{% block content %}
-<a href="/international"><h1>See news</h1></a>
+{% import 'bootstrap/wtf.html' as wtf%}
+
+{% block styles%}
+{{ super() }}
+<link rel="stylesheet" href="{{url_for('static',filename='css/index.css')}}">
 {% endblock %}
+
+{% block content %}
+<body style="background-color: ;">
+<div class="container-fluid">
+      <header id="home"style="background-images: url({{ url_for('static', filename='img/home.jpg') }}) background-size: cover;">
+        <div class="text-box">
+          <h1>Disaster Information Service </h1>
+          <p>We watch, we analyze, we notify</p>
+          <a class="btn" href="#">Inform us on the disaster near you</a>
+        </div>
+      </header>
+             <div class="jumbotron" style="text-align:center; background-color : white;">
+          <div class="AB">
+            <br><br>
+            <strong><h4>KNOW WHAT WE DO:</h4></strong>
+            <p>Janga website provides useful information regarding emergency situations and their prevention.</p>
+            <p>Extraordinary events happening in the World are being monitored in 24 hours per day.</p>
+            <p>After processing the information we are sending it immediately via E-Mail (or other format) for the organisations and persons who have requested it. 
+            </p>
+            <p>We are aspiring that the processed data will be validated and reliable in all cases, to avoid the possible panic situation caused by unreal information. </p>
+            <p>That is why we are trying to create and keep contact with all organisations, which can provide validated information for us,
+            </p>
+          </div>
+        </div>
+
+        <div class="jumbotron"style="text-align:center; background-color : #890620; color: white;">
+          <div class="ct">
+            <h4>SERVICES WE PRODIVE HERE</h4>
+            <p>Beside the official information, with the help of special programs nearly 600-1500 internet press publication will be monitored and the publication containing predefined keywords will be processed. </p>
+             <p>However, these "news" cannot be considered as official and reliable information, but many times we have learnt critical information from the internet press.
+            </p>
+            <p>We are screening the incoming information and storing in a central database</p>
+              <p>After processing the information we are sending it immediately via E-Mail (or other format) for the organisations and persons who have requested it.
+              </p>
+              <p>Certainly we are publishing all incoming data and information at our website to provide up-to-date information to the citizens as well as we are publishing useful knowledge for them
+              </p>
+              
+            </div>
+          </div>
+
+          <div class="container" style="text-align:center">
+            <strong><h4 style="text-align:center">WHAT WE DO</h4></strong>
+            <br><br>
+            <div class="row">
+              <div class="col-md-4">
+                <div class="p1">
+
+                  <img src="images/services_icons/design_icon.png" class="design">
+                  <h4>FlOODS</h4>
+                  <div >
+                    <h5> A flood is an overflow of water that submerges land that is usually dry.<br>
+                    Floods are an area of study of the discipline hydrology and are of significant concern in agriculture, civil engineering and public health.
+                    Flooding may occur as an overflow of water from water bodies, such as a river, lake, or ocean, in which the water overtops or breaks levees, resulting in some of that water escaping its usual boundaries,[2] or it may occur due to an accumulation of rainwater on saturated ground in an areal flood.
+                    </h5>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="p2">
+                  <div class="image2">
+                    <img src="./images/services_icons/dev_icon.png" class="dev" >
+                    <h4>EARTHQUAKES</h4>
+                  </div>
+                  <h5>
+                    An earthquake (also known as a quake, tremor or temblor) is the shaking of the surface of the Earth resulting from a sudden release of energy in the Earth's <br>
+                    lithosphere that creates seismic waves. Earthquakes can range in size from those that are so weak that they cannot be felt to those violent enough to propel objects and people into the air, and wreak destruction across entire cities.
+                  </h5>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="p3">
+                  <div class="image3">
+                    <img src="./images/services_icons/product_icon.png" class="pm">
+                    <h4>LANDSLIDES</h4>
+                  </div>
+                  <h5>
+                     landslide is defined as the movement of a mass of rock, debris, or earth down a slope. Landslides are a type of "mass wasting," which denotes any down-slope movement of soil and rock under the direct influence of gravity. 
+                     The term "landslide" encompasses five modes of slope movement: falls, topples, slides, spreads, and flows. 
+                  </h5>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <br>
+        
+        <br>
+
+      
+</div>
+{% endblock %}
+
+
+</body>

@@ -2,24 +2,28 @@
 
 {% block content %}
 <div class="container">
-  <h1>International Disasters</h1>
-  <div class="row">
-    {% for article in articles%}
-    <div class="col-md-6">
-      <div class="card">
-        <div class="card-title">
-          <h4>{{article.title}}</h4>
-        </div>
-        <div class="card-body">
-          <img class="img-thumbnail img-responsive" src="{{article.urlToImage}}" alt="news photo">
-          <p>{{article.description | truncate(100)}} <a href="{{article.url}}"> read more...</a></p>
-          <footer class="blockquote-footer"><cite title="Source Title"> by {{article.author}} , posted on {{article.publishedAt | truncate(13)}}</cite></footer>
-        </div>
-      </div>
-    </div>  
-    <br>
-    <br> 
-    {% endfor %}
-  </div>
-</div>
+		<!-- Popular movie section  -->
+			<h3> Top Headlines</h3>
+			{% for article_row in articles | batch(4)%}
+				<div class="row">
+					{% for article in article_row %}
+						<div class="col-md-3">
+							<div class="thumbnail">
+							<a href="{{article.url}}" target="_blank">
+								<img src="{{article.urlToImage}}" alt="{{article.title}}" class="img-responsive" styles="height:30px">
+								</a>
+								<div class="caption">
+									<h4><a href="{{article.url}}" target="_blank">{{article.title |truncate(35)}}</a></h4>
+									<p>{{article.description | truncate(80)}}</p>
+									<a href="{{article.url}}" target="_blank"> Read More</a>
+								</div>
+								<div class="footer">
+								Published at: {{article.date}}
+								</div>
+							</div>
+						</div>
+					{% endfor %}
+				</div>
+			{% endfor %}
+	</div>
 {% endblock %}
