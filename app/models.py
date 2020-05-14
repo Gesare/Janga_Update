@@ -21,3 +21,16 @@ class Global:
     self.TotalDeaths=TotalDeaths
     self.NewRecovered=NewRecovered
     self.TotalRecovered=TotalRecovered
+
+class Country:
+  '''
+  country class to define country objects
+  '''
+  def __init__(self,Country,NewConfirmed,Totalconfirmed,NewDeaths,TotalDeaths,NewRecovered,TotalRecovered):
+    self.Country=Country
+    self.NewConfirmed=NewConfirmed
+    self.Totalconfirmed=Totalconfirmed
+    self.NewDeaths=NewDeaths
+    self.TotalDeaths=TotalDeaths
+    self.NewRecovered=NewRecovered
+    self.TotalRecovered=TotalRecovered
