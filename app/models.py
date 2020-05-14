@@ -10,3 +10,14 @@ class Article:
     self.urlToImage=urlToImage
     self.publishedAt=publishedAt
 
+class Global:
+  '''
+  Global class to define global corona cases object
+  '''
+  def __init__(self,NewConfirmed,Totalconfirmed,NewDeaths,TotalDeaths,NewRecovered,TotalRecovered):
+    self.NewConfirmed=NewConfirmed
+    self.Totalconfirmed=Totalconfirmed
+    self.NewDeaths=NewDeaths
+    self.TotalDeaths=TotalDeaths
+    self.NewRecovered=NewRecovered
+    self.TotalRecovered=TotalRecovered
