@@ -82,7 +82,7 @@ class Global:
     self.NewRecovered=NewRecovered
     self.TotalRecovered=TotalRecovered
 
-class Country:
+class Countries:
   '''
   country class to define country objects
   '''

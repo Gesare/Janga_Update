@@ -21,7 +21,7 @@ def create_app(config_name):
     and passes the config name, i.e development
     or production, the will then pick the environments
     from the configuration classes in config
-    """
+  """
   
   app = Flask(__name__)
   app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
