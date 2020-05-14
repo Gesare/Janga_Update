@@ -3,14 +3,16 @@ from .models import Article,Countries,Global
 
 apikey=None
 base_url=None
+corona_url=None
 
 def configure_request(app):
   '''
   function to make url and apikey available globally
   '''
-  global apikey,base_url
+  global apikey,base_url,corona_url
   apikey=app.config['API_KEY']
   base_url=app.config['BASE_URL']
+  corona_url=app.config['CORONA_URL']
 
 def get_article():
   '''
@@ -51,3 +53,26 @@ def process_results(article_list):
       article_object = Article(author,title,description,url,urlToImage,publishedAt)
       article_results.append(article_object)
   return article_results
+
+def get_global():
+  '''
+  function that returns json response for global corona statistics
+  '''
+  get_global_url=corona_url
+  print(get_global_url)
+  with urllib.request.urlopen(get_global_url) as url:
+    global_data = url.read()
+    global_response = json.loads(global_data)
+
+    global_result = None
+
+    if quote_response:
+      author = quote_response.get('author')
+      quote = quote_response.get('quote')
+            
+
+      quote_result = Quote(author, quote)
+
+    return quote_result
+
+
