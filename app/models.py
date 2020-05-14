@@ -70,15 +70,6 @@ class Post(db.Model):
     def __repr__(self):
         return f"Post('{self.title}', '{self.date_posted}')"
 
-class Global:
-  '''
-  Global class to define global corona cases object
-  '''
-  def __init__(self,Totalconfirmed,TotalDeaths,TotalRecovered):
-    self.Totalconfirmed=Totalconfirmed
-    self.TotalDeaths=TotalDeaths
-    self.TotalRecovered=TotalRecovered
-
 class Countries:
   '''
   country class to define country objects
