@@ -13,12 +13,15 @@
                     {% endfor %}
                 {% endif %}
             {% endwith %}
+
             <div class="content-section">
                 <form method="POST" action="">
                     {{ form.hidden_tag() }}
                     <fieldset class="form-group">
+                    <br><br>
+                    Join us today
+                    <hr>
                         <legend class="border-bottom  lg-4 mb-4 sm-4">
-                            Join Today
                         </legend>
                         <div class="form-group">
                             {{ form.username.label(class="form-control-label") }}
