@@ -7,28 +7,30 @@
 {% endblock %}
 
 {% block content %}
-<body style="background-color: ;">
+<body style="background-color: white;">
 <div class="container-fluid">
-      <header id="home"style="background-images: url({{ url_for('static', filename='img/home.jpg') }}) background-size: cover;">
-        <div class="text-box">
-          <h1>Disaster Information Service </h1>
-          <p>We watch, we analyze, we notify</p>
-          <a class="btn" href="#">Inform us on the disaster near you</a>
-        </div>
-      </header>
-             <div class="jumbotron" style="text-align:center; background-color : white;">
-          <div class="AB">
-            <br><br>
-            <strong><h4>KNOW WHAT WE DO:</h4></strong>
-            <p>Janga website provides useful information regarding emergency situations and their prevention.</p>
-            <p>Extraordinary events happening in the World are being monitored in 24 hours per day.</p>
-            <p>After processing the information we are sending it immediately via E-Mail (or other format) for the organisations and persons who have requested it. 
-            </p>
-            <p>We are aspiring that the processed data will be validated and reliable in all cases, to avoid the possible panic situation caused by unreal information. </p>
-            <p>That is why we are trying to create and keep contact with all organisations, which can provide validated information for us,
-            </p>
-          </div>
-        </div>
+  <div class="row jumbotron" style="background-image: url(image/home.jpg);">
+    
+    
+    <div class=" col-md-4">
+      <h4>Disaster Information Service </h4>
+      <p>We watch, we analyze, we notify</p>
+      <a class="btn" href="#">Inform us on the disaster near you</a>
+    </div>
+  
+    <div class=" col-md-8">
+      <br><br>
+      <strong><h4>KNOW WHAT WE DO:</h4></strong>
+      <p>Janga website provides useful information regarding emergency situations and their prevention.</p>
+      <p>Extraordinary events happening in the World are being monitored in 24 hours per day.</p>
+      <p>After processing the information we are sending it immediately via E-Mail (or other format) for the organisations and persons who have requested it. 
+      </p>
+      <p>We are aspiring that the processed data will be validated and reliable in all cases, to avoid the possible panic situation caused by unreal information. </p>
+      <p>That is why we are trying to create and keep contact with all organisations, which can provide validated information for us,
+      </p>
+    </div>
+
+  </div>
 
         <div class="jumbotron"style="text-align:center; background-color : #890620; color: white;">
           <div class="ct">
@@ -45,11 +47,11 @@
             </div>
           </div>
 
-          <div class="container" style="text-align:center">
+          <div class="jumbotron" style="text-align:justify">
             <strong><h4 style="text-align:center">WHAT WE DO</h4></strong>
             <br><br>
             <div class="row">
-              <div class="col-md-4">
+              <div class="col-md-4 content-section " >
                 <div class="p1">
 
                   <img src="images/services_icons/design_icon.png" class="design">
@@ -62,7 +64,7 @@
                   </div>
                 </div>
               </div>
-              <div class="col-md-4">
+              <div class="col-md-4 content-section ">
                 <div class="p2">
                   <div class="image2">
                     <img src="./images/services_icons/dev_icon.png" class="dev" >
@@ -74,7 +76,7 @@
                   </h5>
                 </div>
               </div>
-              <div class="col-md-4">
+              <div class="col-md-4 content-section">
                 <div class="p3">
                   <div class="image3">
                     <img src="./images/services_icons/product_icon.png" class="pm">

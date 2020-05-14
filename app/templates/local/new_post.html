@@ -1,9 +1,9 @@
 {% extends 'base.html'%}
 
-
+{% block content %}
 <main role="main" class="container">
     <div class="row">
-        <div class="col-md-12 col-sm-12>
+        <div class="col-md-12 col-sm-12">
             {% with messages = get_flashed_messages(with_categories=true) %}
                 {% if messages %}
                     {% for category, message in messages %}
@@ -59,3 +59,4 @@
         </div>
     </div>
 </main>
+{% endblock %}
