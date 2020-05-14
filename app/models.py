@@ -74,23 +74,17 @@ class Global:
   '''
   Global class to define global corona cases object
   '''
-  def __init__(self,NewConfirmed,Totalconfirmed,NewDeaths,TotalDeaths,NewRecovered,TotalRecovered):
-    self.NewConfirmed=NewConfirmed
+  def __init__(self,Totalconfirmed,TotalDeaths,TotalRecovered):
     self.Totalconfirmed=Totalconfirmed
-    self.NewDeaths=NewDeaths
     self.TotalDeaths=TotalDeaths
-    self.NewRecovered=NewRecovered
     self.TotalRecovered=TotalRecovered
 
 class Countries:
   '''
   country class to define country objects
   '''
-  def __init__(self,Country,NewConfirmed,Totalconfirmed,NewDeaths,TotalDeaths,NewRecovered,TotalRecovered):
+  def __init__(self,Country,Totalconfirmed,TotalDeaths,TotalRecovered):
     self.Country=Country
-    self.NewConfirmed=NewConfirmed
     self.Totalconfirmed=Totalconfirmed
-    self.NewDeaths=NewDeaths
     self.TotalDeaths=TotalDeaths
-    self.NewRecovered=NewRecovered
     self.TotalRecovered=TotalRecovered

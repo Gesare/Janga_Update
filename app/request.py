@@ -54,25 +54,3 @@ def process_results(article_list):
       article_results.append(article_object)
   return article_results
 
-def get_global():
-  '''
-  function that returns json response for global corona statistics
-  '''
-  get_global_url=corona_url
-  print(get_global_url)
-  with urllib.request.urlopen(get_global_url) as url:
-    global_data = url.read()
-    global_response = json.loads(global_data)
-
-    global_result = None
-
-    if quote_response:
-      author = quote_response.get('author')
-      quote = quote_response.get('quote')
-            
-
-      quote_result = Quote(author, quote)
-
-    return quote_result
-
-

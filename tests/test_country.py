@@ -8,7 +8,7 @@ class CountryTest(unittest.TestCase):
     '''
     setup method that will run before every test
     '''
-    self.new_country=Countries("Kenya",10,10,10,10,10,10)
+    self.new_country=Countries("Kenya",10,10,10)
   def test_instance(self):
     '''
     test to assert whether new_country is an instance of the Countries object

@@ -8,7 +8,7 @@ class GlobalTest(unittest.TestCase):
     '''
     setup method that will run before every test
     '''
-    self.new_global=Global(10,10,10,10,10,10)
+    self.new_global=Global(10,10,10)
   def test_instance(self):
     '''
     test to assert whether new_global is an instance of the Global object
