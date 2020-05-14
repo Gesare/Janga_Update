@@ -178,3 +178,7 @@ input[type=text]{
 p{
   font-size:large;
 }
+
+a{
+  text-decoration: none;
+}

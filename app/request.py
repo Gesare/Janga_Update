@@ -1,16 +1,19 @@
 import urllib.request,json
-from .models import Article
+from .models import Article,Countries
+
 
 apikey=None
 base_url=None
+corona_url=None
 
 def configure_request(app):
   '''
   function to make url and apikey available globally
   '''
-  global apikey,base_url
+  global apikey,base_url,corona_url
   apikey=app.config['API_KEY']
   base_url=app.config['BASE_URL']
+  corona_url=app.config['CORONA_URL']
 
 def get_article():
   '''
@@ -51,3 +54,4 @@ def process_results(article_list):
       article_object = Article(author,title,description,url,urlToImage,publishedAt)
       article_results.append(article_object)
   return article_results
+

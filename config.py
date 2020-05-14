@@ -5,10 +5,11 @@ class Config:
   General configuration parent class
   '''
   BASE_URL='https://newsapi.org/v2/everything?q=floods&earthquakes&landslides&volcano-eruption&apiKey={}'
+  CORONA_URL='https://api.covid19api.com/summary'
   API_KEY=os.environ.get('API_KEY')
   SECRET_KEY = os.environ.get("SECRET_KEY")
   CSRF_ENABLED = os.environ.get('CSRF_ENABLED')
-  SQLALCHEMY_DATABASE_URI='postgresql+psycopg2://jerome:1234@localhost/blog'
+  SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://jerome:1234@localhost/janga'
   MAIL_SERVER = 'smtp.googlemail.com'
   MAIL_PORT = 587
   MAIL_USE_TLS = True
@@ -22,7 +23,7 @@ class ProdConfig(Config):
   Args:
   Config: The parent configuration class with General configuration settings
   '''
-  pass
+  SQLALCHEMY_DATABASE_URI = os.environ.get("DATABASE_URL")
   
   
 class DevConfig(Config):
@@ -31,17 +32,14 @@ class DevConfig(Config):
   Args:
   Config: The parent configuration class with General configuration settings
   '''
-  SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://jerome:1234@localhost/blog'
-  DEBUG = True
+  SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://jerome:1234@localhost/janga'
+  DEBUG=True
 
 class TestingConfig(Config):
-    TESTING = True
-    
+  TESTING=True
+  
 config_options = {
-'development':DevConfig,
-'production':ProdConfig,
-'testing':TestingConfig, 
-}  
-
-
-
+  'development':DevConfig,
+  'production':ProdConfig,
+  'testing':TestingConfig 
+}

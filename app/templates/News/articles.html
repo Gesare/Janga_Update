@@ -2,6 +2,7 @@
 
 {% block content %}
 <div class="container">
+<br><br><br>
 		<!-- Popular movie section  -->
 			<h3> Top Headlines</h3>
 			{% for article_row in articles | batch(4)%}
@@ -10,7 +11,7 @@
 						<div class="col-md-3">
 							<div class="thumbnail">
 							<a href="{{article.url}}" target="_blank">
-								<img src="{{article.urlToImage}}" alt="{{article.title}}" class="img-responsive" styles="height:30px">
+								<img class="img-thumbnail img-responsive" src="{{article.urlToImage}}" alt="news photo">
 								</a>
 								<div class="caption">
 									<h4><a href="{{article.url}}" target="_blank">{{article.title |truncate(35)}}</a></h4>

@@ -71,3 +71,12 @@ class Post(db.Model):
     def __repr__(self):
         return f"Post('{self.title}', '{self.date_posted}')"
 
+class Countries:
+  '''
+  country class to define country objects
+  '''
+  def __init__(self,Country,Totalconfirmed,TotalDeaths,TotalRecovered):
+    self.Country=Country
+    self.Totalconfirmed=Totalconfirmed
+    self.TotalDeaths=TotalDeaths
+    self.TotalRecovered=TotalRecovered

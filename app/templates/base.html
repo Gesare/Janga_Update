@@ -16,36 +16,52 @@
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='index.css') }}">
 </head>
 <body>
-    <div class ="navbar navbar-inverse navbar-expand-md fixed-top bg-dark" role="navigation"  >
-        <div class="container-fluid">
-            <div class="navbar-header">
+    <header class="site-header">
+        <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+            <div class="container">
+                <a class="navbar-brand mr-4" href="{{ url_for('main.index') }}">
+                    Janga Informer
+                </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle" aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon bg-warning" ></span>
+                    <span class="navbar-toggler-icon">
+                    </span>
                 </button>
-                <a class="navbar-brand text-warning" href="/"><h2>Janga Informer</h2></a>
+                <div class="collapse navbar-collapse" id="navbarToggle">
+                    <div class="navbar-nav mr-auto">
+                        <a class="nav-item nav-link" href="{{ url_for('main.index') }}">
+                            Home
+                        </a> 
+                        <a class="nav-item nav-link" href="#">
+                            Covid tracker
+                        </a>
+                        <a class="nav-item nav-link" href="{{ url_for('main.articles') }}">
+                            International News
+                        </a>
+                        <a class="nav-item nav-link" href="{{ url_for('main.main_post') }}">
+                            Local news updates
+                        </a>   
+                    </div>
+                    <div class="navbar-nav">
+                        {% if current_user.is_authenticated %}
+                        <a class="nav-item nav-link" href="{{ url_for('main.new_post') }}">
+                            New Post
+                        </a>
+                        <a class="nav-item nav-link" href="{{ url_for('auth.logout') }}">
+                            Logout
+                        </a>
+                        {% else %}
+                        <a class="nav-item nav-link" href="{{ url_for('auth.login') }}">
+                            Login
+                        </a>
+                        <a class="nav-item nav-link" href="{{ url_for('auth.register') }}">
+                            Register
+                        </a>
+                        {% endif %}
+                    </div>
+                </div>
             </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li><a href="/">Home</a></li>
-                </ul>
-                <ul class="nav navbar-nav">
-                    <li><a href="/">Covid tracker</a></li>
-                </ul>
-                <ul class="nav navbar-nav">
-                    <li><a href="/international">International News</a></li>
-                </ul>
-                <ul class="nav navbar-nav">
-                    <li><a href="/">Local news updates</a></li>
-                </ul>
-    
-                <ul class="nav navbar-nav navbar-right">
-
-                </ul>
-    
-            </div>
-    
-        </div>
-    </div>
+        </nav>
+    </header>
     <div class="container-fluid">
         {% block content %}
         {% endblock content %}
