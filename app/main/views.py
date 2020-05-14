@@ -17,11 +17,14 @@ def index():
 
 @main.route('/international')
 def articles():
-    '''
-    view articles that returns various disaster articles from various sites
-    '''
-    articles=get_article()
-    return render_template('News/articles.html',articles=articles)
+  '''
+  view articles that returns various disaster articles from vaious sites
+  '''
+  articles=get_article()
+  title = f'NH | {id}'
+
+  return render_template('News/articles.html',articles=articles)
+
 
 @main.route("/about")
 def about():
