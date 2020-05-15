@@ -46,10 +46,11 @@
                         <a class="nav-item nav-link" href="{{ url_for('main.new_post') }}">
                             New Post
                         </a>
-                        <a class="nav-item nav-link" href="{{ url_for('auth.logout') }}">
-                            Logout
-                        </a>
-                        {% else %}
+                        {% endif %}
+                         {% if current_user.is_authenticated %}
+                         <a class="nav-item nav-link" href="{{url_for('auth.profile',username=current_user.username)}}">Profile</a>
+                        <a class="nav-item nav-link" href="{{url_for('auth.logout')}}">Logout</a>
+                         {% else %}
                         <a class="nav-item nav-link" href="{{ url_for('auth.login') }}">
                             Login
                         </a>
