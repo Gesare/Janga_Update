@@ -2,6 +2,7 @@ import urllib.request,json
 from .models import Article,Countries,Global
 
 
+
 apikey=None
 base_url=None
 corona_url=None

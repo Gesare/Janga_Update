@@ -16,7 +16,7 @@ def index():
     '''
     return render_template('index.html')
 
-@main.route('/international')
+@main.route('/InternationalNews')
 def articles():
   '''
   view articles that returns various disaster articles from vaious sites
@@ -31,7 +31,7 @@ def articles():
 def about():
     pass
 
-@main.route("/mainpost")
+@main.route("/LocalNews")
 def main_post():
 
     

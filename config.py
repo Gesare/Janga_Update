@@ -23,7 +23,7 @@ class ProdConfig(Config):
   Args:
   Config: The parent configuration class with General configuration settings
   '''
-  pass
+  SQLALCHEMY_DATABASE_URI = os.environ.get("DATABASE_URL")
   
   
 class DevConfig(Config):
@@ -32,17 +32,16 @@ class DevConfig(Config):
   Args:
   Config: The parent configuration class with General configuration settings
   '''
+
   SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://gesare:ombati@localhost/janga'
   DEBUG = True
 
+
 class TestingConfig(Config):
-    TESTING = True
-    
+  TESTING=True
+  
 config_options = {
-'development':DevConfig,
-'production':ProdConfig,
-'testing':TestingConfig, 
-}  
-
-
-
+  'development':DevConfig,
+  'production':ProdConfig,
+  'testing':TestingConfig 
+}
