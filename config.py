@@ -9,7 +9,7 @@ class Config:
   API_KEY=os.environ.get('API_KEY')
   SECRET_KEY = os.environ.get("SECRET_KEY")
   CSRF_ENABLED = os.environ.get('CSRF_ENABLED')
-  SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://jerome:1234@localhost/janga'
+  SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://gesare:ombati@localhost/janga'
   MAIL_SERVER = 'smtp.googlemail.com'
   MAIL_PORT = 587
   MAIL_USE_TLS = True
@@ -32,8 +32,10 @@ class DevConfig(Config):
   Args:
   Config: The parent configuration class with General configuration settings
   '''
-  SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://jerome:1234@localhost/janga'
-  DEBUG=True
+
+  SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://gesare:ombati@localhost/janga'
+  DEBUG = True
+
 
 class TestingConfig(Config):
   TESTING=True

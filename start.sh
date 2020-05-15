@@ -3,4 +3,4 @@ export EMAIL_USER="testflaskboy@gmail.com"
 export EMAIL_PASS='poolboy#@!'
 export SECRET_KEY='jerome123'
 
-python3.8 manage.py server
+python3.6 manage.py server
