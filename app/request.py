@@ -1,5 +1,5 @@
 import urllib.request,json
-from .models import Article,Countries,Global
+from .models import Article,Countries
 
 
 

@@ -68,14 +68,13 @@ def profile():
         current_user.email = form.email.data
         db.session.commit()
         flash('Your Profile has been updated!', 'success')
-        return redirect(url_for('auth.Profile'))
+        return redirect(url_for('auth.profile'))
     elif request.method == 'GET':
         form.username.data = current_user.username
         form.email.data = current_user.email
     image_file = url_for('static', filename='profile_pics/' + current_user.image_file)
-    
-    return render_template('profile.html', title='Profile',image_file=image_file, form=form)
-
+    return render_template('profile/profile.html', title='Account', image_file=image_file, form=form)
+   
 
 @auth.route("/user/<string:username>")
 def user_posts(username):
@@ -122,3 +121,12 @@ def reset_token(token):
         return redirect(url_for('auth.login'))
     
     return render_template('auth/reset_token.html', title='Reset Password', form=form)
+
+@auth.route('/about')
+def about():
+    title = 'About Us'
+    return render_template('about.html', title=title)
+
+
+
+
