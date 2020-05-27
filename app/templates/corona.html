@@ -1,0 +1,22 @@
+{% extends 'base.html'%}
+{% block content %}
+<div class="container">
+<br><br><br>
+    <h2 class="text-center">STATISTICS PER COUNTRY</h2>
+    {% for country in countrystats %}
+      <div class="card">
+      <div class="row">
+        <div class="col-md-3">
+          <h5>Country: {{country.Country}}</h5>
+          <h5>Total Cases: {{country.TotalConfirmed}}</h5>   
+          <h5>Total Deaths: {{country.TotalDeaths}}</h5> 
+          <h5>Total Recoveries: {{country.TotalRecovered}}</h5>  
+        </div>
+      </div>
+      </div>
+    {% endfor %}
+</div>
+{% endblock %}
+
+
+
