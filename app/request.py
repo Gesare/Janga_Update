@@ -1,8 +1,6 @@
 import urllib.request,json
 from .models import Article,Countries
 
-
-
 apikey=None
 base_url=None
 corona_url=None
@@ -56,3 +54,36 @@ def process_results(article_list):
       article_results.append(article_object)
   return article_results
 
+def get_country():
+  '''
+  function that returns json response to url request
+  '''
+  get_country_url=corona_url
+  print(get_country_url)
+  with urllib.request.urlopen(get_country_url) as url:
+    get_country_data=url.read()
+    get_country_response= json.loads(get_country_data)
+
+    country_results=None
+    if get_country_response['Countries']:
+      country_results_list = get_country_response['Countries']
+      country_results = process_country(country_results_list)
+  return country_results
+
+def process_country(country_list):
+  '''
+  Function  that processes the  country result and transform them to a list of Objects
+
+  '''
+  country_results = []
+  for country_item in country_list:
+    Country = country_item.get('Country')
+    TotalConfirmed = country_item.get('TotalConfirmed')
+    TotalDeaths = country_item.get('TotalDeaths')      
+    TotalRecovered = country_item.get('TotalRecovered')
+
+    if Country:
+      country_object = Countries(Country,TotalConfirmed,TotalDeaths,TotalRecovered)
+      country_results.append(country_object)
+
+  return country_results

@@ -1,6 +1,6 @@
 from flask import render_template, url_for, flash,redirect, request, abort, Blueprint
 from . import main
-from ..request import get_article
+from ..request import get_article,get_country
 from ..models import Article, Post
 from flask_login import login_required, current_user
 from .form import PostForm
@@ -94,3 +94,13 @@ def delete_post(post_id):
     flash('Your post has been deleted!', 'success')
     
     return redirect(url_for('main.main_post'))
+
+@main.route('/corona')
+def corona():
+  '''
+  view route for the corona tracker
+  '''
+  
+  countrystats=get_country()
+  return render_template('corona.html',countrystats=countrystats)
+
